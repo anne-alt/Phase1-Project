@@ -1,4 +1,20 @@
+const EMPTY_HEART = '♡'
+ const FULL_HEART = '♥'
+
 const get = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita'
+
+function liking() {
+  array.forEach((item => (item.addEventListener('click', () => {
+  if (item.innerHTML === EMPTY_HEART) {
+    item.innerHTML = FULL_HEART
+    item.className = "activated-heart"
+  } else {
+    item.innerHTML = EMPTY_HEART
+    item.className = " "
+  }
+}))))
+
+}
 
 function content() {
     fetch(get)
@@ -22,9 +38,9 @@ function content() {
               document.querySelector('.card')
               const hide = document.querySelectorAll('.cuter')
 
-                hide.forEach(item => console.log((item.innerHTML).split(',')))
+                // hide.forEach(item => console.log((item.innerHTML).split(',')))
 
-                hide.forEach(item => console.log((item.innerHTML).split(',').filter(item => { if (item != " null") { console.log(item)}}))) 
+                // hide.forEach(item => console.log((item.innerHTML).split(',').filter(item => { if (item != " null") { console.log(item)}}))) 
     
                })
       
@@ -55,23 +71,13 @@ function content() {
         }
 
         
-        const EMPTY_HEART = '♡'
-        const FULL_HEART = '♥'
+        
 
-        const likes = document.querySelectorAll('.like-glyph')
+        let likes = document.querySelectorAll('.like-glyph')
 
-        function liking() {
-          likes.forEach((item => (item.addEventListener('click', () => {
-          if (item.innerHTML === EMPTY_HEART) {
-            item.innerHTML = FULL_HEART
-            item.className = "activated-heart"
-          } else {
-            item.innerHTML = EMPTY_HEART
-            item.className = " "
-          }
-        }))))
-
-        }
+        
+        document.querySelectorAll('.like-glyph').liking();
+        likes.liking();
 
         
       
