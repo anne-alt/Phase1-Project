@@ -9,19 +9,6 @@ const get = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita'
 //   console.log(rem)
 
 
-function liking() {
-  array.forEach((item => (item.addEventListener('click', () => {
-  if (item.innerHTML === EMPTY_HEART) {
-    item.innerHTML = FULL_HEART
-    item.className = "activated-heart"
-  } else {
-    item.innerHTML = EMPTY_HEART
-    item.className = " "
-  }
-}))))
-
-}
-
  function content() {
     fetch(get)
     .then(res => res.json())
@@ -78,11 +65,25 @@ function liking() {
         }
         function out(b) {
           b.target.parentNode.remove()
-        }     
+        }  
+        
+        function liking() {
+          array.forEach((item => (item.addEventListener('click', () => {
+          if (item.innerHTML === EMPTY_HEART) {
+            item.innerHTML = FULL_HEART
+            item.className = "activated-heart"
+          } else {
+            item.innerHTML = EMPTY_HEART
+            item.className = " "
+          }
+        }))))
+        
+        }
+        
         
 }
 
-content();
+document.addEventListener('DOMContentLoaded', content());
 
 
 
