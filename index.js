@@ -55,11 +55,10 @@ function liking() {
 
                })
       
-      //  (data.drinks)
         })
 
         document.addEventListener("DOMContentLoaded", () => {
-          let form = document.querySelector("form")
+          let form = document.querySelector("#choose-ingredients")
           form.addEventListener("submit",(a) => {
             a.preventDefault()
             choices(a.target.choose.value)

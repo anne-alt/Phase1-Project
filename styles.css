@@ -2,8 +2,6 @@ body {
     height: 100%;
     text-align: center;
     background: linear-gradient(#4C5454, #F1FFFA, #FF715B);
-    /* background-color: #FF715B; */
-
 }
 
 h1 {
@@ -89,3 +87,4 @@ button {
     padding: 2%;
     border: 1px solid black;
 }
+
