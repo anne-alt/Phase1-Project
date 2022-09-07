@@ -14,7 +14,7 @@
 
 # Description
  
- I am creating a web application that gives a tips on how to prepare a few cocktails. The application allows for users to also log their preferred mixes onto the app as well as like the choices provided. 
+ I am creating a web application that gives tips on how to prepare a few cocktails. The application allows users to log their preferred mixes onto the app as well as like the choices provided. 
 
  # Instructions
 
