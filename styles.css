@@ -88,3 +88,7 @@ button {
     border: 1px solid black;
 }
 
+.quote {
+    font-size: xx-large;
+    font-style: italic;
+}
