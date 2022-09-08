@@ -31,21 +31,6 @@ const get = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita'
               
 
                })
-              
-
-              // Remove nulls from page
-
-               document.querySelector('.card')
-
-            const hide = document.querySelectorAll('.cuter')
-
-             $('div').on('DOMContentLoaded', '.cuter', function () {
-              
-               hide.forEach(item => console.log((item.innerHTML).split(',').filter(item => { 
-                if (item != " null") { 
-                  (item)
-                }}))) 
-                })
             
 
               // initialise liker
