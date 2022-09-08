@@ -82,14 +82,16 @@ button {
     flex: 40%;
 }
 
-.like-glyph {
-    float: left;
-    font-size: x-large;
-    padding: 2%;
-    border: 1px solid black;
-}
 
 .quote {
     font-size: xx-large;
     font-style: italic;
+}
+
+ol {
+    float: left;
+    font-size: x-large;
+    padding: 1%;
+    margin-bottom: 5px;
+    border: 1px solid black;
 }

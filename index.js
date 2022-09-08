@@ -3,13 +3,9 @@ const EMPTY_HEART = '♡'
 
 const get = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita'
 
-//  const rem =  function removeNull(get) {
-//     return get.filter(n => n !== null )
-//   }
-//   console.log(rem)
-
 
  function content() {
+  // fetch data from API
     fetch(get)
     .then(res => res.json())
     .then(function shift(data) {
@@ -23,26 +19,54 @@ const get = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita'
             <div> 
             <div class = "cute">${drink.strDrink}</div> 
              <div class = 'cuter'> ${drink.strIngredient1}, ${drink.strIngredient2}, ${drink.strIngredient3}, ${drink.strIngredient4}, ${drink.strIngredient5}, ${drink.strIngredient6}, ${drink.strIngredient7}</div> 
-            <div class = 'cutest'>${drink.strInstructions}    <ul><span class="like-glyph">&#x2661;</span></ul>
+            <div class = 'cutest'>${drink.strInstructions} 
+            <ol><span class="like-glyph">&#x2661;</span></ol>
             </div> 
 
             </div>`
              
-            document.querySelector('.card')
-
-             function removeNull() {
-               const hide = document.querySelectorAll('.cuter')
-              
-               hide.forEach(item => console.log((item.innerHTML).split(',').filter(item => { if (item != " null") { console.log(item)}}))) 
-                }
-            
             
             article.append(div)
-             removeNull();
+
+              
 
                })
-      
+              
+
+              // Remove nulls from page
+
+               document.querySelector('.card')
+
+            const hide = document.querySelectorAll('.cuter')
+
+             $('div').on('DOMContentLoaded', '.cuter', function () {
+              
+               hide.forEach(item => console.log((item.innerHTML).split(',').filter(item => { 
+                if (item != " null") { 
+                  (item)
+                }}))) 
+                })
+            
+
+              // initialise liker
+
+               const button = document.querySelectorAll('ol')
+              
+              
+               $('ol').on('hover', '.like-glyph', function() { 
+                button.forEach(item => { item.addEventListener("click", () => {
+                  if (item.innerHTML === EMPTY_HEART) {
+                    ( item.innerHTML = FULL_HEART) 
+                    item.className = "activated-heart"
+                  } else {
+                    ( item.innerHTML = EMPTY_HEART)
+                    item.className = ""
+                    }
+                  })
+                  })})        
         })
+
+        // log values of form to the page
 
         document.addEventListener("DOMContentLoaded", () => {
           let form = document.querySelector("#choose-ingredients")
@@ -53,6 +77,7 @@ const get = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita'
           })
         })
         
+        // create elements of logged values from form
         function choices(choose) {
           let li = document.createElement("li")
           let btn = document.createElement("button")
@@ -67,18 +92,7 @@ const get = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita'
           b.target.parentNode.remove()
         }  
         
-        function liking() {
-          array.forEach((item => (item.addEventListener('click', () => {
-          if (item.innerHTML === EMPTY_HEART) {
-            item.innerHTML = FULL_HEART
-            item.className = "activated-heart"
-          } else {
-            item.innerHTML = EMPTY_HEART
-            item.className = " "
-          }
-        }))))
         
-        }
         
         
 }
